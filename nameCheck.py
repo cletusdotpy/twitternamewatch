@@ -32,7 +32,7 @@ while run:
     created_at = user_data['created_at']
 
     print('\n'+created_at)
-    for remaining in range(60, 0, -1):
+    for remaining in range(173, 0, -1):
         sys.stdout.write("\r")
         sys.stdout.write("{:2d} seconds remaining.".format(remaining))
         sys.stdout.flush()
