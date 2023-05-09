@@ -2,7 +2,7 @@
 # This shit cost me $80... better get it.
 
 bearertoke = "ENTER_YOURS"
-user_id = "ENTER_YOURS"
+user_id = "ENTER_DESIRED"
 
 import requests
 import json
