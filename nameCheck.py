@@ -9,6 +9,7 @@ import json
 import time
 import sys
 import winsound
+import usernameSelenium
 
 run = True
 
@@ -18,22 +19,23 @@ while run:
         'Authorization': f'Bearer {bearertoke}'
     }
 
-    response = requests.get(url, headers=headers)
+    responseReal = requests.get(url, headers=headers)
+    user_data = json.loads(responseReal.text)
 
-    if response.status_code != 200:
+    if 'errors' in user_data:
         print("BAD RESPONSE GO GET EM TIGER")
         frequency = 1000
         duration = 5000
         winsound.Beep(frequency, duration)
+        usernameSelenium.send_text()
         run = False
         break
 
-    user_data = json.loads(response.text)['data'][0]
-    created_at = user_data['created_at']
+    else:
+        print(user_data)
 
-    print('\n'+created_at)
-    for remaining in range(173, 0, -1):
-        sys.stdout.write("\r")
-        sys.stdout.write("{:2d} seconds remaining.".format(remaining))
-        sys.stdout.flush()
-        time.sleep(1)
+        for remaining in range(60, 0, -1):
+            sys.stdout.write("\r")
+            sys.stdout.write("{:2d} seconds remaining.".format(remaining))
+            sys.stdout.flush()
+            time.sleep(1)
