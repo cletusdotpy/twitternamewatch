@@ -34,7 +34,7 @@ while run:
     else:
         print(user_data)
 
-        for remaining in range(60, 0, -1):
+        for remaining in range(173, 0, -1):
             sys.stdout.write("\r")
             sys.stdout.write("{:2d} seconds remaining.".format(remaining))
             sys.stdout.flush()
