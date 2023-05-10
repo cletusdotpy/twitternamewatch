@@ -36,7 +36,7 @@ while run:
 
     else:
         print(user_data)
-        # Print plaintext because why not, then countdown from 173 (500 / 24).
+        # Print plaintext because why not, then countdown from 173 (this can run 24/7).
         # This timer can be decreased, but you will eventually hit a rate cap
         for remaining in range(173, 0, -1):
             sys.stdout.write("\r")
