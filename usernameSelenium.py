@@ -8,7 +8,7 @@ from selenium.webdriver.remote.webelement import WebElement
 def send_text():
     options = webdriver.ChromeOptions()
     options.add_argument(r'CHROME DATA DIRECTORY HERE') #e.g. C:\Users\You\AppData\Local\Google\Chrome\User Data  - This and below use Chrome data to allow automatic login to Google Voice
-    options.add_argument(r'YOUR DESIRED CHROME PROFILE') #e.g. Profile 3
+    options.add_argument(r'YOUR DESIRED CHROME PROFILE') #e.g. profile-directory=Default
 
     driver = webdriver.Chrome(options=options)
     driver.get('https://voice.google.com/u/0/messages')
